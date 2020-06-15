@@ -1,5 +1,7 @@
-function add(x: number, y: number) {
-    return x + y;
-}
+import {Publisher} from "./publisher";
+import {Subscriber} from "./subscriber";
 
-console.log("sum: ", add(2, 3));
+const publisher: Publisher = new Publisher();
+const subscriber: Subscriber = new Subscriber();
+console.log("sum: ", publisher.add(2, 3));
+console.log("sum: ", subscriber.add(2, 3));

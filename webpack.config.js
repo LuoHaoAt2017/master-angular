@@ -6,6 +6,7 @@ function resolve(x) {
 }
 
 module.exports = {
+	target: "node",
 	mode: "development",
     entry: {
         main: resolve("src/main.ts")
@@ -16,20 +17,25 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.(ts|js)$/,
-                use: ["babel-loader", "awesome-typescript-loader"]
-            }
+			{
+				test: /\.js$/,
+				loader: "babel-loader"
+			},
+			{
+				test: /\.ts$/,
+				loader: "awesome-typescript-loader"
+			}
         ]
     },
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "src")
-        }
-    },
+            "@": resolve("src")
+        },
+		extensions: [".ts"]
+	},
     devServer: {
         port: 6000,
-        contentBase: path.resolve(__dirname, "dist/")
+        contentBase: resolve("dist/")
     },
     plugins: [
         new CleanWebpackPlugin()
