@@ -1,7 +1,13 @@
-import {Publisher} from "./publisher";
-import {Subscriber} from "./subscriber";
+// 倒入重命名
+import { Fish, Horse, Eagle, Man, Subject, Observer } from "./observer/index";
 
-const publisher: Publisher = new Publisher();
-const subscriber: Subscriber = new Subscriber();
-console.log("sum: ", publisher.add(2, 3));
-console.log("sum: ", subscriber.add(2, 3));
+const fish: Observer = new Fish("fish");
+const horse: Observer = new Horse("horse");
+const eagle: Observer = new Eagle("eagle");
+
+const man: Subject = new Man("man");
+
+man.attach(fish);
+man.attach(horse);
+man.attach(eagle);
+man.notify(1000);
