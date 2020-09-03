@@ -11,7 +11,8 @@ import { Vue, Component } from 'vue-property-decorator';
   name: 'Home'
 })
 export default class App extends Vue {
-
+  mounted() {
+  }
 }
 </script>
 
