@@ -38,4 +38,4 @@ class Circle {
   }
 }
 
-new Circle();
+const circle: any = new Circle();

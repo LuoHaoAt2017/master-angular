@@ -8,7 +8,6 @@ function resolve(x) {
 }
 
 module.exports = {
-	mode: "development",
     entry: {
         main: resolve("src/main.ts")
     },
@@ -49,9 +48,6 @@ module.exports = {
         },
 		extensions: [".ts", ".js", ".vue"]
 	},
-    devServer: {
-        port: 9000
-    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
