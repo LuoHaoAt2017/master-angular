@@ -28,14 +28,14 @@ console.log(x); // 1
 console.log(y); // 2
 console.log(z); // { a: 3, b: 4 }
 
-// class Circle {
-//   #x: number = 0;
-//   #y: number = 0;
-//   #r: number = 1;
+class Circle {
+  #x: number = 0;
+  #y: number = 0;
+  #r: number = 1;
 
-//   public getArea() {
-//     return Math.PI * Math.pow(this.#r, 2);
-//   }
-// }
+  public getArea() {
+    return Math.PI * Math.pow(this.#r, 2);
+  }
+}
 
-// new Circle();
+new Circle();
