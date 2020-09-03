@@ -1,12 +1,13 @@
 const path = require("path");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { VueLoaderPlugin } = require('vue-loader')
 
 function resolve(x) {
     return path.resolve(__dirname, x)
 }
 
 module.exports = {
-	target: "node",
 	mode: "development",
     entry: {
         main: resolve("src/main.ts")
@@ -19,25 +20,43 @@ module.exports = {
         rules: [
 			{
 				test: /\.js$/,
-				loader: "babel-loader"
-			},
-			{
+                loader: "babel-loader",
+            },
+            {
 				test: /\.ts$/,
-				loader: "awesome-typescript-loader"
-			}
+                loader: "ts-loader",
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
+            },
+            {
+				test: /\.vue$/,
+                use: ["vue-loader"]
+            },
+            {
+                test: /\.(png|jpg|svg)$/,
+                use: ["file-loader"]
+            },
+            {
+                test: /\.(css|less)$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            },
         ]
     },
     resolve: {
         alias: {
             "@": resolve("src")
         },
-		extensions: [".ts"]
+		extensions: [".ts", ".js", ".vue"]
 	},
     devServer: {
-        port: 6000,
-        contentBase: resolve("dist/")
+        port: 9000
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: resolve("public/index.html")
+        }),
+        new VueLoaderPlugin()
     ]
 };
