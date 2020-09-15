@@ -19,6 +19,8 @@
     "src/**/*.vue",
     "src/**/*.png",
     "src/**/*.jpg",
-    "src/**/*.svg"
+    "src/**/*.svg",
+    "test/**/.ts",
+    "test/**/.js"
   ]
 }
