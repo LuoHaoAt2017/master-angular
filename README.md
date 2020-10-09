@@ -1,1 +1,4 @@
 # master-typescript
+
+模块加载器的作用是在执行此模块代码前去查找并执行这个模块的所有依赖。
+大家最熟知的JavaScript模块加载器是服务于Node.js的 CommonJS和服务于Web应用的Require.js。
