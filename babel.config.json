@@ -1,4 +1,11 @@
 {
     "presets": ["@babel/preset-typescript"],
-    "plugins": []
+    "plugins": [
+        [
+            "babel-plugin-import", {
+                "libraryName": "antd",
+                "style": true
+            }
+        ]
+    ]
 }

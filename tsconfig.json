@@ -1,10 +1,26 @@
 {
   "compilerOptions": {
+    "target": "ES2015",
     "module": "commonjs",
-    "target": "es5",
-    "outDir": "dist"
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "pretty": true,
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
-    "src/**/*"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.png",
+    "src/**/*.jpg",
+    "src/**/*.svg",
+    "test/**/.ts",
+    "test/**/.js"
   ]
 }
