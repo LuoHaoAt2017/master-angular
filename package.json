@@ -4,8 +4,8 @@
   "description": "typescript",
   "main": "src/main.ts",
   "scripts": {
-    "build": "webpack --progress --mode production",
-    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --progress --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "test": "jest"
   },
   "repository": {
