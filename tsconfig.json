@@ -1,18 +1,42 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "commonjs",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": false,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "pretty": true,
+    /* 基本选项 */
+    "target": "ES2015",                     // 指定 ECMAScript 目标版本
+    "module": "commonjs",                   // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+    "lib": [],                              // 指定要包含在编译中的库文件
+    "allowJs": true,                        // 允许编译js
+    "checkJs": true,                        // 报告js中的错误
+    "declaration": false,                   // 生成相应的.d.ts文件
+    "sourceMap": false,                     // 生成相应的.map文件
+    "outDir": "./dist",                     // 指定输出目录
+    "removeComments": true,                 // 删除编译后的注释
+    "noEmit": false,                        // 不生成输出文件
+
+    /* 严格的类型检查选项 */
+    "strict": true,                         // 启用严格类型检查
+    "noImplicitAny": false,                 // 在表达式和方法上含有隐形的any时报错
+    "strictNullChecks": true,               // 启用严格的 null 检查
+    "noImplicitThis": true,                 // 当 this 的类型是 any 类型时报错
+    "alwaysStrict": true,                   // 以严格模式检查每个模块，并在每个文件中添加 use strict
+
+    /* 额外的检查 */
+    "noUnusedLocals": true,                 // 未使用的局部变量报错
+    "noUnusedParameters": true,             // 未使用的参数报错
+    "noImplicitReturns": true,              // 没有返回值时报错
+    "noFallthroughCasesInSwitch": true,     // 不允许 switch 语句的 case 贯穿。
+
+    /* 模块解析选项 */
+    "moduleResolution": "node",             // 模块解析策略
+    "baseUrl": "./",                        // 基路径
+    "paths": {},                            // 模块名到基路径的映射
+    // "types": [],                         // 需要包含的类型声明文件
+    "allowSyntheticDefaultImports": false,  // 不允许从没有设置默认导出的模块中导出
+
+    /* 其他选项 */
+    "experimentalDecorators": true,         // 启用装饰器
+
   },
-  "exclude": [
-    "node_modules"
-  ],
+  // "files":[], // 显式指定需要编译的文件
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
@@ -22,5 +46,8 @@
     "src/**/*.svg",
     "test/**/.ts",
     "test/**/.js"
-  ]
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

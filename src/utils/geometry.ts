@@ -11,15 +11,22 @@
     private r: number = 1;
 
     constructor();
-    constructor(x: number, y: number, z: number);
+    constructor(x: number, y: number, r: number);
     constructor(x?: number, y?: number, r?: number) {
-      this.x = x;
-      this.y = y;
-      this.r = r;
+      this.x = x || 0;
+      this.y = y || 0;
+      this.r = r || 0;
     }
 
     public getArea():number {
       return Math.PI * Math.pow(this.r, 2);
+    }
+
+    public getPosition() {
+      return {
+        x: this.x,
+        y: this.y
+      }
     }
   }
 
@@ -30,8 +37,8 @@
     Triangle();
     Triangle(width: number, height: number);
     Triangle(width?: number, height?: number) {
-      this.width = width;
-      this.height = height;
+      this.width = width || 0;
+      this.height = height || 0;
     }
 
     public getArea(): number {
@@ -43,4 +50,4 @@
   global['token'] = token;
   global['Circle'] = Circle;
   global['Triangle'] = Triangle;
-})(window);
+})(globalThis);

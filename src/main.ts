@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import Vue from 'vue';
-import router from './router';
+import router from './routes';
 import App from './pages/App.vue';
 import './utils/common';
 import andt from 'ant-design-vue';
