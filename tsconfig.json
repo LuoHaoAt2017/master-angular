@@ -7,7 +7,7 @@
     "allowJs": true,                        // 允许编译js
     "checkJs": true,                        // 报告js中的错误
     "declaration": false,                   // 生成相应的.d.ts文件
-    "sourceMap": false,                     // 生成相应的.map文件
+    "sourceMap": true,                      // 生成相应的.map文件
     "outDir": "./dist",                     // 指定输出目录
     "removeComments": true,                 // 删除编译后的注释
     "noEmit": false,                        // 不生成输出文件
@@ -34,7 +34,6 @@
 
     /* 其他选项 */
     "experimentalDecorators": true,         // 启用装饰器
-
   },
   // "files":[], // 显式指定需要编译的文件
   "include": [
